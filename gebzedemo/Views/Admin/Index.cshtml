@@ -1,0 +1,26 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_AdminIndexLayout";
+    ViewData["Title"] = "Panel";
+    ViewData["Active"] = "active";
+    ViewData["Deactive"] = "deactive";
+}
+
+<h1 class="display-6">Admin Panel</h1>
+
+<div class="shadow p-3 mb-5 bg-white rounded text-center "><p>Toplam Mesaj Sayısı:</p> <div class=" badge badge-primary text-wrap text-center" style="width: 3rem; height: 3rem;">
+ <h1 class="display-6"> @TempData["MesajSayisi"]</h1>
+</div></div>
+
+
+
+@{
+    if (@TempData["msg"] != null)
+    {
+    <script>
+            alert('@TempData["msg"]')
+    </script>
+    }
+}	

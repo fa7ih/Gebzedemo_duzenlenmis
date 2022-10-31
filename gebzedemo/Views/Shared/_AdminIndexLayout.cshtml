@@ -1,0 +1,101 @@
+﻿@{
+    string active = "active";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+  <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="~/css/styleAdmin.css">
+
+</head>
+<body>
+  <nav>
+    <div class="sidebar-top">
+      <span class="shrink-btn">
+        <i class='bx bx-chevron-left'></i>
+      </span>
+      <img src="./img/logo.png" class="logo" alt="">
+      <h3 class="hide">GezGebze</h3>
+    </div>
+
+    <div class="search">
+      <i>Admin</i>
+    </div>
+
+    <div class="sidebar-links">
+      <ul>
+        <div class="active-tab"></div>
+        <li class="tooltip-element" data-tooltip="0">
+          <a asp-action="Index" asp-controller="Admin" class="@ViewBag.Active"  >
+            <div class="icon">
+              <i class='bx bx-tachometer'></i>
+              <i class='bx bxs-tachometer'></i>
+            </div>
+            <span class="link hide">Panel</span>
+          </a>
+        </li>
+        
+        <li class="tooltip-element" data-tooltip="1">
+          <a asp-action="Messages" asp-controller="Admin"  class="@ViewBag.Deactive"  >
+            <div class="icon">
+              <i class='bx bx-message-square-detail'></i>
+              <i class='bx bxs-message-square-detail'></i>
+            </div>
+            <span class="link hide">Mesajlar</span>
+          </a>
+        </li>
+       
+        <div class="tooltip">
+          <span class="show">Panel</span>
+          <span>Mesajlar</span>
+       
+        </div>
+      </ul>
+
+     
+    </div>
+
+    <div class="sidebar-footer">
+      
+      <div class="admin-user tooltip-element" data-tooltip="1">
+        <div class="admin-profile hide">
+          <img src="./img/face-1.png" alt="">
+          <div class="admin-info">
+            
+           
+          </div>
+        </div>
+        <a href="/Admin/LogOut" class="log-out">
+          <i class='bx bx-log-out'></i>
+        </a>
+      </div>
+      
+    </div>
+  </nav>
+
+
+  <main>
+    
+   @RenderBody()
+    <p class="copyright">
+        
+      &copy; 2022 -<a href="https://localhost:44304/Home/Privacy"> <span>GezGebze</span> </a> Tüm hakları saklıdır.
+    </p>
+  </main>
+
+      <script src="~/js/appAdmin.js"></script>
+
+</body>
+</html>
+

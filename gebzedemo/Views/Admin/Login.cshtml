@@ -1,0 +1,31 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model gebzedemo.Models.AdminCred;
+
+@{
+    Layout = "_AdminLoginLayout";
+    ViewData["Title"] = "Admin Panel";
+}
+ 
+
+    <form id= "admin-login" asp-controller="Admin" asp-action="Login" formaction="POST" class="form-signin">
+      <img class="mb-3" src="~/assets/images/logo.png" alt="" width="100" height="100">
+      <h1 class="h3 mb-3 font-weight-normal">Admin Girişi</h1>
+      <label for="username" class="sr-only">Kullanıcı Adı</label>
+      <input asp-for="Username" id="Username" class="form-control" placeholder="Kullanıcı Adı" required autofocus>
+      <label for="inputPassword" class="sr-only">Şifre</label>
+      <input type="password" asp-for="Password"  id="Password" class="form-control" placeholder="Şifre" required>
+      <button id="submitButton" name="submit" class="btn btn-lg btn-primary btn-block" type="submit">Giriş Yap</button>
+      <p class="mt-5 mb-3 text-muted">&copy; 2022 <a asp-action="Index" asp-controller="Home">GezGebze</a></p>
+      </form>
+	
+@{
+    if (@TempData["msg"] != null)
+    {
+    <script>
+            alert('@TempData["msg"]')
+    </script>
+    }
+}	

@@ -1,0 +1,54 @@
+﻿@{
+	Layout="_IndexLayout";
+    ViewData["Title"] = "Hoşgeldiniz";
+}
+
+    
+      <!-- FScreen-->
+      <section class="section jumbotron-1">
+        <div class="container container-wide">
+          <div class="jumbotron-1-inner">
+            <div class="owl-group-1 jumbotron-1-main">
+              <div class="owl-group-1-main">
+                <!-- Owl Carousel-->
+                <div class="owl-carousel" data-items="1" data-dots-custom="#owl-dots-1" data-stage-padding="0" data-loop="false" data-autoplay="true" data-margin="30" data-animation-in="fadeIn" data-animation-out="fadeOut" data-mouse-drag="false">
+                  <article class="tour-1 bg-image context-dark" style="background-image: url(assets/images/index/1.png);">
+                    <p class="tour-1-title">Gebze</p>
+                    <p class="tour-1-caption heading-4"></p>
+                  </article>
+                  <article class="tour-1 bg-image context-dark" style="background-image: url(assets/images/index/2.png);">
+                    <p class="tour-1-title">Seni</p>
+                    <p class="tour-1-caption heading-4"></p>
+                  </article>
+                  <article class="tour-1 bg-image context-dark" style="background-image: url(assets/images/index/3.png);">
+                    <p class="tour-1-title">Bekliyor</p>
+                    <p class="tour-1-caption heading-4"></p>
+                  </article>
+                 
+                </div>
+              </div>
+              <div class="owl-dots-nav" id="owl-dots-1">
+                <button class="wow fadeIn" data-owl-item="0">Gebze</button>
+                <button class="wow fadeIn" data-owl-item="1" data-wow-delay=".1s">Seni</button>
+                <button class="wow fadeIn" data-owl-item="2" data-wow-delay=".2s">Bekliyor</button>
+             
+              </div>
+            </div>
+            <div class="jumbotron-1-aside">
+              <div class="jumbotron-1-group">
+                <div class="jumbotron-1-group-item focus-toggle-parent wow fadeIn">
+                  <button class="jumbotron-1-group-item-toggle"><span class="icon mdi mdi-phone"></span></button>
+                  <div class="jumbotron-1-group-item-content focus-toggle"><a href="tel:05061793786">Bize Ulaş</a></div>
+                </div>
+                <div class="jumbotron-1-group-item focus-toggle-parent wow fadeIn" data-wow-delay=".1s">
+                  <button class="jumbotron-1-group-item-toggle"><span class="icon mdi mdi-email-outline"></span></button>
+                  <div class="jumbotron-1-group-item-content focus-toggle"><a asp-area="" asp-controller="Iletisim" asp-action="Index">İletişim</a></div>
+                </div>
+               
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>			
+

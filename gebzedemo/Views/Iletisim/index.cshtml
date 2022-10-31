@@ -1,0 +1,100 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model gebzedemo.Models.IletisimSend
+
+@{
+   ViewData["Title"] = "İletişim";
+}
+<div class="container">
+
+        <div class="row">
+
+            <div class="col-xl-8 offset-xl-2 py-5">
+
+                <h1>
+                    <a href="https://localhost:44304/">GezGebze</a>
+                    İletişim Formu
+                </h1>
+
+                <p class="lead">Lütfen istek, dilek, öneri ve şikayetlerinizi bu formu doldurarak bize bildiriniz. Mesajlarınız, en kısa sürede yanıtlanacaktır.</p>
+
+
+                <form id="contact-form"  asp-action="Index" role="form">
+
+                    <div class="messages"></div>
+
+                    <div class="controls">
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="form_name">Ad *</label>
+                                    <input id="form_name" type="text" name="Name" class="form-control" asp-for="Name" placeholder="Lütfen adınızı giriniz *" required="required" data-error="Ad gereklidir.">
+									
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="form_lastname">Soyad *</label>
+                                    <input id="form_lastname" type="text" name="Surname" class="form-control" asp-for="Surname" placeholder="Lütfen soyadınızı girin *" required="required" data-error="Soyadı gereklidir.">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="form_email">Email *</label>
+                                    <input id="form_email" type="email" name="Email" class="form-control" asp-for="Email" placeholder="Lütfen emailini giriniz *" required="required" data-error="Lütfen geçerli bir email girin.">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                           <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="form_phone">Telefon *</label>
+                                    <input id="form_phone" type="number" name="Phone" class="form-control" asp-for="Phone" placeholder="Lütfen telefon numaranızı giriniz *" required="required" data-error="Lütfen geçerli bir telefon numarası girin.">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="form_message">Mesaj *</label>
+                                    <textarea id="form_message" name="Message" class="form-control" asp-for="Message" placeholder="Mesajınız *" rows="4" required="required" data-error="Lütfen mesajınızı giriniz."></textarea>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <input id="submitButton" type="submit" name="submit" class="btn btn-success btn-send" value="Gönder">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p class="text-muted">
+                                    <strong>*</strong> ile işaretlenmiş alanlar gereklidir 
+                                    </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+            <!-- /.8 -->
+
+        </div>
+        <!-- /.row-->
+
+    </div>
+	
+@{
+    if (@TempData["msg"] != null)
+    {
+        <script>
+		alert('@TempData["msg"]')
+        </script>
+    }
+}		
